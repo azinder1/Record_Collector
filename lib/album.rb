@@ -21,7 +21,7 @@ class Album
   def save
     @@albums.push(self)
   end
-  def find(id)
+  def self.find(id)
     found_album = nil
     @@albums.each() do |album|
       if album.id().eql?(id)

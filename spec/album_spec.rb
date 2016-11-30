@@ -52,4 +52,14 @@ describe(Album) do
       expect(Album.all()).to(eq([]))
     end
   end
+
+  describe('.find') do
+    it('will find a unique id out of the Class array') do
+      album1 = Album.new(:title => "Some Girls", :format => "LP", :quality => "Very Good")
+      album1.save()
+      album2 = Album.new(:title => "Let it Bleed", :format => "LP", :quality => "Meh")
+      album2.save()
+      expect(Album.find(2)).to(eq(album2))
+    end
+  end
 end

@@ -26,38 +26,38 @@ describe(Person) do
     end
   end
 
-  # describe('#save') do
-  #   it("saves an artist to the artists array") do
-  #     artist1 = Artist.new(:name => "The Rolling Stones")
-  #     artist1.save()
-  #     expect(Artist.all()).to(eq([artist1]))
-  #   end
-  # end
-  #
-  # describe('.clear') do
-  #   it("clears the global artists array") do
-  #     artist1 = Artist.new(:name => "The Rolling Stones")
-  #     artist1.save()
-  #     Artist.clear()
-  #     expect(Artist.all()).to(eq([]))
-  #   end
-  # end
-  #
-  # describe('#add_album') do
-  #   it("adds an album to the artist array") do
-  #     artist1 = Artist.new(:name => "The Rolling Stones")
-  #     album1 = Album.new(:title => "Some Girls", :format => "LP", :quality => "Very Good")
-  #     artist1.add_album(album1)
-  #     expect(artist1.albums()).to(eq([album1]))
-  #   end
-  # end
-  # describe('.find') do
-  #   it('will find a unique id out of the Class array') do
-  #     artist1 = Artist.new(:name => "The Rolling Stones")
-  #     artist1.save()
-  #     artist2 = Artist.new(:name => "Katy Perry")
-  #     artist2.save()
-  #     expect(Artist.find(2)).to(eq(artist2))
-  #   end
-  # end
+  describe('#save') do
+    it("saves an users to the artists array") do
+      person1 = Person.new(:name => "Greg")
+      person1.save()
+      expect(Person.all()).to(eq([person1]))
+    end
+  end
+
+  describe('.clear') do
+    it("clears the global people array") do
+      person1 = Person.new(:name => "Greg")
+      person1.save()
+      Person.clear()
+      expect(Person.all()).to(eq([]))
+    end
+  end
+
+  describe('#add_artist') do
+    it("adds an artist to the persons artist array") do
+      person1 = Person.new(:name => "Greg")
+      artist1 = Artist.new(:name => "The Rolling Stones")
+      person1.add_artist(artist1)
+      expect(person1.artists()).to(eq([artist1]))
+    end
+  end
+  describe('.find') do
+    it('will find a unique id out of the Class array') do
+      person1 = Person.new(:name => "Greg")
+      person1.save()
+      person2 = Person.new(:name => "Katy")
+      person2.save()
+      expect(Person.find(2)).to(eq(person2))
+    end
+  end
 end

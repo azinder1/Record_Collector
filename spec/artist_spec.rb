@@ -59,5 +59,4 @@ describe(Artist) do
       expect(Artist.find(2)).to(eq(artist2))
     end
   end
-
 end
